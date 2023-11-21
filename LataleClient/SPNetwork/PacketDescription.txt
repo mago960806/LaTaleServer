@@ -1,0 +1,123 @@
+
+//----------- ITEM begin ------------------------------------------------------------------------
+
+1) ID :	ITEM_SC_CONTAINER_INFO
+2) 용도
+- 컨테이너 내에서 단일 슬롯의 아이템 정보 갱신.
+- 아이템 줍기/이동등 인벤이나 기타의 컨테이너에서의 단일 정보가 갱신되었을때.
+3) Data Structure
+- CHARID(UINT32)
+- CONTAINER_ITEM
+
+
+1) ID : ITEM_SC_CONTAINER_INFOS
+2) 용도 
+- 컨테이너 내에서 복수 슬롯의 아이템 정보 갱신.
+- 캐릭터 최초 로딩시, 아이템 교환시, 인벤내에서 상호 교환시 이용.
+3) Data Structure
+- CHARID(UINT32)
+- N(UINT16) : 보낼 총갯수 
+- CONTAINER_ITEM * N
+
+
+1) ID: ITEM_CS_LOOTING,			
+2) 용도
+- 아이템 줍기 요청.
+3) Data Structure
+- LOOTING_ITEM
+
+
+1) ID: ITEM_SC_LOOTING,			
+2) 용도
+- 아이템 줍기 성공완료. (해당 몹 인벤의 슬롯을 정리한다.)
+3) Data Structure
+- CHARID(UINT32)
+- LOOTING_ITEM
+
+
+1) ID: ITEM_CS_CHANGE_SLOT,			
+2) 용도
+- 컨테이너내에서의 아이템 위치 이동 요청. 
+- Source Slot 에 위치한 Item을 Destination 위치로 Count 갯수만큼 옮기는 경우	
+3) Data Structure
+- CONTAINER_SLOT (Source)
+- CONTAINER_SLOT (Destination)
+- Count (ItemCount)
+
+
+1) ID: ITEM_SC_CHANGE_SLOT
+2) 용도
+- 당장은 별 필요 사항 없음.
+
+
+1) ID: ITEM_CS_TRASH
+2) 용도
+- 아이템 버리기 요청.
+- Source Slot 에 위치한 Item을 Count 갯수만큼 버리는 경우.
+3) Data Structure
+   TRASH_ITEM
+
+1) ID: ITEM_SC_TRASH
+2) 용도
+- 아이템 버리기 성공
+- Source Slot 에 위치한 Item의 Count 갯수만큼 버려짐. 해당 슬롯 정보를 적절히 가감하라.
+3) Data Structure
+   - CHARID(UINT32)
+   - TRASH_ITEM
+
+1) ID : ITEM_SC_ALARM
+2) 용도
+- 아이템 행위에 대한 메세지. 
+3) Data Structure 
+   - CHARID(UINT32)
+   - EXCEPTION_CODE
+
+
+// 캐릭터가 가지고 있는 외형장비들을 보내기.
+
+1) ID : ITEM_SC_FIGURE_INFOS
+2) 용도
+  - 캐릭터의 Sight in 시점이나 로그인 되는 시점에 보내주는 아이템 정보.
+
+3) Data Structure 
+   - CHARID(UINT32)
+   - N(UINT16) : 보낼 총갯수 
+   - FIGURE_ITEM * N
+
+
+1) ID : ITEM_SC_FIGURE_ON
+2) 용도
+- 착용시
+
+3) Data Structure 
+   - CHARID(UINT32)
+   - FIGURE_ITEM 
+
+
+
+1) ID : ITEM_SC_FIGURE_OFF
+2) 용도
+- 탈착시
+
+
+3) Data Structure 
+   - CHARID(UINT32)
+   - FIGURE_ITEM 
+
+
+1) ID: ITEM_CS_TOGGLE_USE_WEAPON_SET
+2) 용도 
+   - 무기 TAB 전환
+
+3) DATA STRUCTURE
+   -  
+
+1) ID: ITEM_SC_TOGGLE_USE_WEAPON_SET
+2) 용도 
+   - 무기 TAB 전환성공결과.
+
+3) DATA STRUCTURE
+   - CHARID(UINT32)
+   - 
+
+//----------- ITEM end ------------------------------------------------------------------------

@@ -1,0 +1,54 @@
+// Copyright (C) AJJIYA
+//***************************************************************************
+// System Name : 
+// Comment     : 
+// Creation    : AJJIYA 2005-11-9    11:59 
+//***************************************************************************
+
+#pragma once
+
+enum COMBOBOX_TYPE
+{
+	COMBOBOX_TYPE_NONE		=	0x0000	,
+	COMBOBOX_TYPE_EDIT		=	0x0001	,
+	COMBOBOX_TYPE_DROPDOWN	=	0x0010	,
+	COMBOBOX_TYPE_BOTH		=	COMBOBOX_TYPE_EDIT	|	COMBOBOX_TYPE_DROPDOWN	,
+};
+
+enum COMBOBOX_TEXTURE
+{
+	COMBOBOX_TEXTURE_LEFT_TOP				=	0								,
+	COMBOBOX_TEXTURE_CENTER_TOP													,
+	COMBOBOX_TEXTURE_RIGHT_TOP													,
+	COMBOBOX_TEXTURE_LEFT_MIDDLE												,
+	COMBOBOX_TEXTURE_CENTER_MIDDLE												,
+	COMBOBOX_TEXTURE_RIGHT_MIDDLE												,
+	COMBOBOX_TEXTURE_LEFT_BOTTOM												,
+	COMBOBOX_TEXTURE_CENTER_BOTTOM												,
+	COMBOBOX_TEXTURE_RIGHT_BOTTOM												,
+	COMBOBOX_TEXTURE_COUNT														,
+};
+
+enum COMBOBOX_DATA_TEXTURE_LABEL
+{
+	COMBOBOX_DATA_TEXTURE_ENABLE		=	0	,
+	COMBOBOX_DATA_TEXTURE_HIT				,
+	COMBOBOX_DATA_TEXTURE_PUSH				,
+	COMBOBOX_DATA_TEXTURE_DISABLE			,
+	COMBOBOX_DATA_TEXTURE_COUNT				,
+};
+
+enum COMBOBOX_SCROLL_DIR
+{
+	COMBOBOX_SCROLL_LEFT			=	0	,
+	COMBOBOX_SCROLL_CENTER					,
+	COMBOBOX_SCROLL_RIGHT					,
+	COMBOBOX_SCROLL_DIR_COUNT				,
+};
+
+struct CBB_RENDER_INFO
+{
+	RECT								m_rcRenderPos;
+	COMBOBOX_DATA_TEXTURE_LABEL			m_eStatus;
+};
+
